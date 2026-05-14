@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caminode | Software crafted with intention</title>
+    <meta name="description"
+        content="A collection of purposeful digital tools and micro-SaaS products built by solo developer Amir.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Using a slightly different weight scale for that crisp Apple look -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        apple: {
+                            bg: '#fbfbfd',
+                            text: '#1d1d1f',
+                            subtext: '#86868b',
+                            blue: '#0066cc',
+                            card: '#ffffff'
+                        }
+                    },
+                    boxShadow: {
+                        'apple-card': '0 4px 24px -6px rgba(0, 0, 0, 0.05)',
+                        'apple-hover': '0 20px 40px -10px rgba(0, 0, 0, 0.08)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #fbfbfd;
+            color: #1d1d1f;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .glass-nav {
+            background: rgba(251, 251, 253, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* Product Card Base Styles */
+        .product-card {
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            overflow: hidden;
+            background: #ffffff;
+            border-radius: 32px;
+        }
+
+        /* Subtle Inner Shadow for Depth */
+        .product-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 32px;
+            box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02);
+            pointer-events: none;
+        }
+
+        /* Hover Reveal Effects for specific products */
+        .product-card.surfbreak:hover {
+            background: linear-gradient(145deg, #ffffff 0%, #f0f7ff 100%);
+            transform: translateY(-4px) scale(1.01);
+        }
+
+        .product-card.hpc:hover {
+            background: linear-gradient(145deg, #ffffff 0%, #f0fdfa 100%);
+            transform: translateY(-4px) scale(1.01);
+        }
+
+        .product-card.autofaq:hover {
+            background: linear-gradient(145deg, #ffffff 0%, #f0fdf4 100%);
+            transform: translateY(-4px) scale(1.01);
+        }
+
+        /* Custom minimal scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+    </style>
+
+    <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+</head>
+
+<body class="min-h-screen flex flex-col selection:bg-apple-blue selection:text-white">
+
+    <header class="w-full glass-nav fixed top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-[52px]">
+                <!-- Logo text only, clean and sharp -->
+                <a href="#"
+                    class="text-[17px] font-semibold tracking-tight text-apple-text hover:opacity-70 transition-opacity">
+                    Caminode.
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8 items-center">
+                    <a href="#products"
+                        class="text-[12px] uppercase tracking-widest font-semibold text-apple-subtext hover:text-apple-text transition-colors">Products</a>
+                    <a href="https://amirtm.tech" target="_blank"
+                        class="text-[12px] uppercase tracking-widest font-semibold text-apple-subtext hover:text-apple-text transition-colors">Portfolio</a>
+                    <a href="#contact"
+                        class="text-[12px] uppercase tracking-widest font-semibold text-apple-subtext hover:text-apple-text transition-colors">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-14">
+        <section class="py-32 lg:py-48 relative overflow-hidden">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+
+                <h1
+                    class="text-6xl md:text-[80px] lg:text-[100px] font-black tracking-tighter text-apple-text mb-6 leading-[1.05]">
+                    Tools built <br>
+                    for clarity.
+                </h1>
+
+                <p
+                    class="text-xl md:text-[24px] font-medium text-apple-subtext mb-12 max-w-3xl mx-auto leading-relaxed tracking-tight">
+                    Independent software to reclaim focus, simplify data, and manage complex systems.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <a href="#products"
+                        class="px-8 py-4 bg-apple-text text-white rounded-full text-[17px] font-semibold hover:bg-black transition-colors transform hover:scale-105 duration-300">
+                        View Products
+                    </a>
+                    <a href="https://amirtm.tech" target="_blank"
+                        class="text-[17px] font-semibold text-apple-blue hover:underline flex items-center gap-1 group">
+                        Read my story
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center mb-20">
+                    <h2 class="text-[40px] md:text-[56px] font-bold tracking-tight text-apple-text">The Portfolio.</h2>
+                    <p class="text-[21px] text-apple-subtext mt-4">Focused solutions for specific problems.</p>
+                </div>
+
+                <!-- Products Layout -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+                    <div
+                        class="product-card surfbreak shadow-apple-card hover:shadow-apple-hover lg:col-span-8 flex flex-col justify-between min-h-[480px]">
+                        <div class="p-12 md:p-16 z-10">
+                            <div class="flex items-center gap-3 mb-6">
+                                <span
+                                    class="bg-blue-100 text-apple-blue text-[11px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">Extension</span>
+                            </div>
+                            <h3 class="text-4xl md:text-[48px] font-bold tracking-tight text-apple-text mb-6">SurfBreak.
+                            </h3>
+                            <p class="text-[19px] leading-relaxed text-apple-subtext max-w-md mb-10">
+                                Reclaim focus with mindful friction. Break habit loops and pivot to your real-time to-do
+                                list while browsing.
+                            </p>
+                            <a href="https://chromewebstore.google.com/detail/mibekllkmmpgkclglkbenhdoohdbdblf"
+                                target="_blank"
+                                class="inline-block px-6 py-3 bg-apple-blue text-white rounded-full text-[15px] font-semibold hover:bg-blue-700 transition-colors">
+                                Add to Chrome
+                            </a>
+                        </div>
+
+                        <!-- Abstract Geometric Decor for SurfBreak -->
+                        <div
+                            class="absolute right-0 bottom-0 w-2/3 h-2/3 opacity-10 pointer-events-none transform translate-x-20 translate-y-20">
+                            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                <path fill="#0066cc"
+                                    d="M44.7,-76.4C58.8,-69.2,71.8,-59.1,81.3,-46.3C90.8,-33.5,96.8,-18,97.7,-2.1C98.6,13.8,94.3,30.2,84.9,43.2C75.5,56.2,61.1,65.8,45.8,71.4C30.5,77,15.2,78.5,-0.3,79.1C-15.8,79.6,-31.6,79,-45.5,72.9C-59.4,66.8,-71.4,55.1,-79.8,41C-88.2,26.9,-93,10.4,-91.7,-5.4C-90.4,-21.2,-83,-36.3,-71.6,-47.5C-60.2,-58.7,-44.8,-66.1,-30.5,-72.6C-16.2,-79.1,-2.9,-84.7,11,-82.9C24.9,-81.1,30.6,-83.6,44.7,-76.4Z"
+                                    transform="translate(100 100)" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div
+                        class="product-card hpc shadow-apple-card hover:shadow-apple-hover lg:col-span-4 flex flex-col justify-between min-h-[480px]">
+                        <div class="p-10 z-10 flex flex-col h-full">
+                            <div>
+                                <div class="flex items-center gap-3 mb-6">
+                                    <span
+                                        class="bg-teal-100 text-teal-700 text-[11px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">Web
+                                        App</span>
+                                </div>
+                                <h3 class="text-3xl font-bold tracking-tight text-apple-text mb-4">HPC-Pilot.</h3>
+                                <p class="text-[17px] leading-relaxed text-apple-subtext mb-8">
+                                    A streamlined frontend dashboard for managing High-Performance Computing pilot
+                                    deployments.
+                                </p>
+                            </div>
+                            <div class="mt-auto">
+                                <a href="https://hpc-pilot-frontend.vercel.app/" target="_blank"
+                                    class="text-[15px] font-semibold text-teal-600 hover:text-teal-700 flex items-center gap-1 group">
+                                    Launch Dashboard
+                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                        class="h-4 w-4 transform group-hover:translate-x-1 transition-transform"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M9 5l7 7-7 7" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="product-card autofaq shadow-apple-card hover:shadow-apple-hover lg:col-span-12 flex flex-col md:flex-row justify-between min-h-[400px]">
+                        <div class="p-12 md:p-16 z-10 max-w-2xl">
+                            <div class="flex items-center gap-3 mb-6">
+                                <span
+                                    class="bg-green-100 text-green-700 text-[11px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">Data
+                                    Tool</span>
+                            </div>
+                            <h3 class="text-4xl md:text-[48px] font-bold tracking-tight text-apple-text mb-6">AutoFaq.
+                            </h3>
+                            <p class="text-[19px] leading-relaxed text-apple-subtext mb-10">
+                                Intelligent data analysis. Convert call transcripts and user queries into searchable
+                                word clouds, topic clusters, and automated FAQ responses.
+                            </p>
+                            <a href="https://autofaq.netlify.app/" target="_blank"
+                                class="text-[17px] font-semibold text-green-600 hover:text-green-700 flex items-center gap-1 group">
+                                Try AutoFaq
+                                <svg xmlns="http://www.w3.org/2000/svg"
+                                    class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+
+                        <!-- Minimal UI Hint Graphic -->
+                        <div class="hidden md:flex items-center justify-center p-12 relative w-full md:w-1/3">
+                            <div class="w-full h-full border-l border-zinc-100 absolute left-0 top-0"></div>
+                            <div
+                                class="w-24 h-24 rounded-full border-4 border-green-100 flex items-center justify-center">
+                                <div
+                                    class="w-16 h-16 rounded-full border-4 border-green-500/20 flex items-center justify-center">
+                                    <div class="w-8 h-8 rounded-full bg-green-500"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-32 bg-apple-bg border-t border-black/5">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+                <h2 class="text-4xl font-bold tracking-tight text-apple-text mb-8">Independent software.</h2>
+                <p class="text-[21px] text-apple-subtext mb-12 leading-relaxed">
+                    Every tool is built, maintained, and supported by a solo developer. <br class="hidden md:block">No
+                    external funding, just a focus on solving real problems.
+                </p>
+
+                <div class="flex flex-col items-center gap-4">
+                    <a href="mailto:amir.thapamagar02@gmail.com"
+                        class="text-2xl font-medium text-apple-blue hover:underline">
+                        Send me an email
+                    </a>
+                    <a href="https://amirtm.tech" target="_blank"
+                        class="text-[15px] font-semibold text-apple-subtext hover:text-apple-text transition-colors mt-4">
+                        View Developer Portfolio
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white py-8 border-t border-black/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <span class="text-[17px] font-semibold tracking-tight text-apple-text">
+                    Caminode.
+                </span>
+
+                <p class="text-[12px] text-apple-subtext">
+                    Copyright © <span id="year"></span> Caminode. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set dynamic year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Initialize Ko-Fi Widget safely after load
+        window.addEventListener('load', function () {
+            if (typeof kofiWidgetOverlay !== 'undefined') {
+                try {
+                    kofiWidgetOverlay.draw('amirtm', {
+                        'type': 'floating-chat',
+                        'floating-chat.donateButton.text': 'Support me',
+                        'floating-chat.donateButton.background-color': '#1d1d1f', // Matches Apple Dark text
+                        'floating-chat.donateButton.text-color': '#fff'
+                    });
+                } catch (e) {
+                    console.error("Ko-fi widget failed to load:", e);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
