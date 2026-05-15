@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caminode | Software Studio</title>
+    <meta name="description" content="The software studio of Amir. Designing independent tools like SurfBreak, HPC-Pilot, and AutoFaq that respect your time, data, and workflow.">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -21,6 +22,21 @@
 
         .tracking-tightest {
             letter-spacing: -0.04em;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
         }
     </style>
 </head>
@@ -40,24 +56,55 @@
             <div class="flex items-center gap-6">
                 <a href="https://amirtm.tech" target="_blank"
                     class="text-sm font-medium text-zinc-500 hover:text-zinc-900 transition">Portfolio</a>
-                <a href="mailto:your.email@gmail.com"
+                <a href="mailto:amir.thapamagar02@gmail.com"
                     class="text-sm font-medium text-zinc-500 hover:text-zinc-900 transition">Contact</a>
             </div>
         </div>
     </nav>
 
-    <main class="flex-grow pt-32 pb-20 px-6">
-        <section class="max-w-4xl mx-auto text-center mb-32">
-            <h1 class="text-6xl md:text-8xl font-bold tracking-tightest text-zinc-900 mb-6">Built with intent.</h1>
-            <p class="text-xl md:text-2xl text-zinc-500 font-medium max-w-2xl mx-auto leading-relaxed">
-                The software studio of Amir. Designing tools that respect your time, data, and workflow.
-            </p>
+    <main class="flex-grow px-6">
+        <!-- Full Screen Hero Section -->
+        <section class="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+            <!-- Decorative Background Elements -->
+            <div class="absolute top-1/4 -left-20 w-96 h-96 bg-blue-100 rounded-full blur-[120px] opacity-60"></div>
+            <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-100 rounded-full blur-[120px] opacity-60"></div>
+            
+            <div class="max-w-4xl mx-auto text-center relative z-10 animate-fade-in-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-100 border border-zinc-200 text-sm font-semibold text-zinc-600 mb-10">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Available for projects
+                </div>
+                <h1 class="text-7xl md:text-[120px] font-bold tracking-tightest text-zinc-900 mb-8 leading-[0.9]">
+                    Built with <span class="text-transparent bg-clip-text bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-500">intent.</span>
+                </h1>
+                <p class="text-xl md:text-3xl text-zinc-500 font-medium max-w-2xl mx-auto leading-relaxed mb-12">
+                    The software studio of Amir. <br class="hidden md:block">Designing tools that respect your time, data, and workflow.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+                    <a href="#projects" class="px-10 py-5 bg-zinc-900 text-white rounded-2xl font-bold text-lg hover:bg-zinc-800 transition-all hover:scale-105 active:scale-95 shadow-xl shadow-zinc-200">
+                        View Projects
+                    </a>
+                    <a href="mailto:amir.thapamagar02@gmail.com" class="px-10 py-5 bg-white text-zinc-900 border border-zinc-200 rounded-2xl font-bold text-lg hover:bg-zinc-50 transition-all">
+                        Get in touch
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 animate-bounce opacity-40">
+                <span class="text-xs font-bold uppercase tracking-widest text-zinc-400">Scroll</span>
+                <svg class="w-6 h-6 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
         </section>
 
-        <section class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Project Grid Section -->
+        <section id="projects" class="max-w-7xl mx-auto py-32 grid grid-cols-1 md:grid-cols-2 gap-6">
 
             <a href="https://hpc-pilot-frontend.vercel.app/" target="_blank"
-                class="block group relative overflow-hidden rounded-3xl bg-zinc-100 p-10 md:p-14 hover:bg-[#e0f2fe] transition-colors duration-500 md:col-span-2">
+                class="block group relative overflow-hidden rounded-[2.5rem] bg-[#e0f2fe] p-10 md:p-14 hover:shadow-2xl hover:shadow-blue-200/50 transition-all duration-500 md:col-span-2">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl group-hover:bg-blue-400/20 transition-colors"></div>
                 <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-8">
                     <div class="max-w-xl">
                         <h2 class="text-4xl font-bold tracking-tight text-zinc-900 mb-4">HPC-Pilot</h2>
@@ -83,27 +130,38 @@
                 </div>
             </a>
 
-            <a href="https://surfbreak.caminode.com" target="_blank"
-                class="block group relative overflow-hidden rounded-3xl bg-zinc-100 p-10 md:p-14 hover:bg-zinc-200 transition-colors duration-500">
+            <div
+                class="block group relative overflow-hidden rounded-[2.5rem] bg-[#f5f3ff] p-10 md:p-14 hover:shadow-2xl hover:shadow-purple-200/50 transition-all duration-500">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-purple-400/10 rounded-full blur-3xl group-hover:bg-purple-400/20 transition-colors"></div>
                 <div class="relative z-10 h-full flex flex-col justify-between">
                     <div>
                         <h2 class="text-3xl font-bold tracking-tight text-zinc-900 mb-4">SurfBreak</h2>
                         <p class="text-zinc-600 mb-8">Reclaim your focus with mindful friction. A browser extension that
                             interrupts habit loops with breathing and logic puzzles.</p>
                     </div>
-                    <span
-                        class="inline-flex items-center gap-2 font-semibold text-zinc-900 group-hover:text-zinc-600 transition-colors mt-auto">
-                        View Product <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none"
-                            stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                        </svg>
-                    </span>
+                    <div class="flex flex-wrap gap-6 mt-auto">
+                        <a href="https://surfbreak.caminode.com" target="_blank"
+                            class="inline-flex items-center gap-2 font-semibold text-zinc-900 hover:text-purple-700 transition-colors">
+                            Product Page <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                            </svg>
+                        </a>
+                        <a href="https://chromewebstore.google.com/detail/surfbreak/mibekllkmmpgkclglkbenhdoohdbdblf" target="_blank"
+                            class="inline-flex items-center gap-2 font-semibold text-zinc-500 hover:text-zinc-900 transition-colors">
+                            Add to Chrome <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-            </a>
+            </div>
 
             <a href="https://autofaq.netlify.app/" target="_blank"
-                class="block group relative overflow-hidden rounded-3xl bg-zinc-100 p-10 md:p-14 hover:bg-[#dcfce7] transition-colors duration-500">
+                class="block group relative overflow-hidden rounded-[2.5rem] bg-[#f0fdf4] p-10 md:p-14 hover:shadow-2xl hover:shadow-emerald-200/50 transition-all duration-500">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-emerald-400/10 rounded-full blur-3xl group-hover:bg-emerald-400/20 transition-colors"></div>
                 <div class="relative z-10 h-full flex flex-col justify-between">
                     <div>
                         <h2 class="text-3xl font-bold tracking-tight text-zinc-900 mb-4">AutoFaq</h2>
@@ -121,6 +179,38 @@
                 </div>
             </a>
 
+        </section>
+
+        <!-- Independent Software Section -->
+        <section class="max-w-7xl mx-auto px-6 py-40 text-center relative">
+            <div class="absolute inset-0 flex items-center justify-center opacity-50 -z-10">
+                <div class="w-[800px] h-[400px] bg-zinc-100 rounded-[5rem] rotate-3 blur-3xl"></div>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-5xl md:text-6xl font-bold tracking-tight text-zinc-900 mb-8">Independent software.</h2>
+                <p class="text-xl md:text-2xl text-zinc-500 font-medium leading-relaxed mb-16">
+                    Every tool is built, maintained, and supported by a solo developer. <br class="hidden md:block">No
+                    external funding, just a focus on solving real problems.
+                </p>
+
+                <div class="flex flex-col items-center gap-8">
+                    <a href="mailto:amir.thapamagar02@gmail.com"
+                        class="text-3xl font-bold text-blue-600 hover:text-blue-700 transition-all hover:scale-105 active:scale-95 flex items-center gap-3">
+                        Send me an email
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </a>
+                    
+                    <div class="w-12 h-[1px] bg-zinc-200"></div>
+
+                    <a href="https://amirtm.tech" target="_blank"
+                        class="text-sm font-bold uppercase tracking-widest text-zinc-400 hover:text-zinc-900 transition-colors">
+                        View Developer Portfolio
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 
